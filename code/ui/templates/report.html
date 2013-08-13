@@ -1,0 +1,223 @@
+﻿$def with(url,url_result,Engines,Safe_type,allnum,status,now,result_count,recheck)
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>[$url]检测结果-网址安全检测|Check Url Security[CUS]</title>
+		<meta name="keywords" content="网址,网址检测,网址安全检测,网站安全,网站安全检测,CUS,Check Url Security,网址威胁,网址访问安全,检测,网盾,网址访问,网址危险,反垃圾网站,微博转播,垃圾网址"/>
+		<meta name="description" content="网址安全检测-Check Url Security[CUS],检测网址安全，网站安全检测。[CUS]通过三十几款检测引擎来帮你检测网址的安全性，而且这个数量还在增加中，为您带来更安全的浏览。您可以根据各个引擎检测结果来判断网址的安全性,同时[CUS]也会给出安全建议。" />
+		<!--[if lt IE 9]>
+			<script type="text/javascript" src="/js/html5.js"></script>
+		<![endif]-->
+		<!--[if IE 6]>
+			<script type="text/javascript" src="/js/letskillie6.zh_CN.min.js"></script>
+		<![endif]-->
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/css/common.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/css/welcome.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js" charset="utf-8"></script>
+		<script language="JavaScript" type="text/javascript">
+		  function post(){
+			$$.post(document.URL, { newtask: 1},
+			function(data){
+			if (data = 'ok')
+				{
+					location.reload();
+				}
+			});
+		  }
+		  function check(e){
+		  var str = e.value;
+		  if(str =="请输入要查询的网址,如http://cnsite.so")
+		  {
+		  alert("请输入您要查询的网址！","网址安全检测");
+		  e.focus();
+		  return false;
+		  this.location=this.location;
+		  }
+		  else
+		  {
+			if(!checkeURL(str)){
+			  alert("请输入正确的网址！");
+			  e.focus();
+			  return false;
+			  this.location=this.location;
+			}
+			else
+			{
+			 input.style.display='none';
+			 checkwait.style.display='block';
+			 window.location.href="/report/"+encodeURIComponent(str);
+			 return false
+			}
+		  }
+		 }
+		  function checkeURL(URL){
+		  var str=URL;
+		  if(str.substr(0,4)!="http")
+			{
+			 str="http://"+str;
+			}
+		  var Expression=/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/; 
+		  var objExp=new RegExp(Expression);
+		  if(objExp.test(str)==true){
+		  return true;
+		  }else{
+		   return false;
+		   }
+		  } 
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<ul id="nav">
+				<li><a href="index.html">首页</a></li>
+				<li><a target="_blank" href="http://cnsiteso.diandian.com/post/2013-04-05/40049787760">意见反馈</a></li>
+				<li><a target="_blank" href="http://cnsiteso.diandian.com/post/2013-04-05/40049255291">检测说明</a></li>
+				<li><a target="_blank" href="http://cnsiteso.diandian.com/post/2013-04-05/40049048599">关于我们</a></li>
+				<li><a target="_blank" href="http://cnsiteso.diandian.com/">团队博客</a></li>
+			</ul>
+			<div id="top">
+				<h1>网址安全检测|Check Url Security[CUS]--关注网址威胁,促进网址访问安全</h1>
+				<ul>
+					<li>三十几款检测引擎,给你更精确的结果，更安全的访问</li>
+					<li>检测网站钓鱼、挂马、漏洞信息及js、下载链接安全</li>
+					<li>生成检测报告,分享,促进网址访问安全</li>
+				</ul>
+				<form name="checkform"  id="checkform"  method="GET"  action="/report/" onSubmit="return check(this.url);">	
+				<div id="input" class="input" style="padding-top: 260px;padding-left: 505px;">
+					<input style="margin-top: 7px;height: 20px;width: 300px;" type="text" size="30" name="url" id="url" class="xlarge" value="$url" onfocus="if(this.value=='请输入要查询的网址,如http://cnsite.so'){this.value='';}" onblur="if(this.value==''){this.value='请输入要查询的网址,如http://cnsite.so';}">
+					<button style="width: 90px;height: 30px;padding-top: 5px;" class="btn primary">检测</button>
+				</div>
+				<div id="checkwait" class="input" style="padding-top: 240px;padding-left: 505px;vertical-align:middle;color:#6DC4DA;display:none;" >
+					<img src="/images/loading.gif"><p style="margin-left: 2px;margin-top: 5px;">开始检测，请勿关闭页面,等待跳转...</p>
+				</div>	
+				</form>
+				<a id="version" href="#" rel="nofollow">版本:V2.0(BETA 1)&nbsp;[12款引擎]</a>
+				<div id="bdshare" class="bshare-custom">
+					<!-- JiaThis Button BEGIN -->
+					<div id="ckepop">
+					<a class="jiathis_button_qzone"></a>
+					<a class="jiathis_button_tsina"></a>
+					<a class="jiathis_button_tqq"></a>
+					<a class="jiathis_button_renren"></a>
+					<a class="jiathis_button_kaixin001"></a>
+					<a class="jiathis_button_t163"></a>
+					<a class="jiathis_button_xiaoyou"></a>
+					<a class="jiathis_button_meilishuo"></a>
+					<a class="jiathis_button_googleplus"></a>
+					<a class="jiathis_button_sohu"></a>
+					<a class="jiathis_button_sdonote"></a>
+					<a class="jiathis_button_tuita"></a>
+					<a class="jiathis_button_miliao"></a>
+					<a class="jiathis_button_twitter"></a>
+					<a class="jiathis_button_fanfou"></a>
+					<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+					<a class="jiathis_counter_style"></a>
+					</div>
+					<script type="text/javascript" >
+					var jiathis_config={
+						url:"http://www.cnsite.so",
+						summary:"[CUS]通过三十几款检测引擎来帮你检测网址的安全性，而且这个数量还在增加中，为您带来更安全的浏览.",
+						title:"#网址安全##网址安全检测#网址安全检测[CUS],关注网址威胁,促进网址访问安全 ",
+						pic:"http://urlcheck.sinaapp.com//images/weibo.jpg",
+						ralateuid:{
+							"tsina":"fooying"
+						},
+						hideMore:true
+					}
+					</script>
+					<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+					<!-- JiaThis Button END -->
+
+				</div>
+	
+			</div>
+			<img src="/images/weibo.jpg" style="display:none" title="网址安全检测|Check Url Security[CUS]--关注网址威胁,促进网址访问安全" />
+			<div id="sites" >
+				<div class="inner"  style="height: 110px;background:url(/images/site4.jpg) no-repeat;background-color:#ffffff;-webkit-border-bottom-left-radius:5px;-webkit-border-bottom-right-radius:5px;-moz-border-bottom-left-radius:5px;-moz-border-bottom-right-radius:5px;border-bottom-left-radius:5px;border-bottom-right-radius:5px">
+					<div style="float:left;width:900px;">	
+						 <h3><a href="#"><b>检测结果
+						 $if status == 'ing':
+							&nbsp;(检测中&nbsp;<img style="vertical-align:middle;box-shadow:0 0px 0px rgba(0,0,0,0.2)" src="/images/check.gif">)
+						</b></a></h3> 
+						<div  style="float:left;width:600px;height:130px;margin-left: 20px;">
+							<table>
+								<tbody>
+								<tr>
+									<td width="100px" class="header">检测网址:</td>
+									<td class="header">$url</td>
+								</tr>
+								<tr>
+									<td width="100px" class="header">已检测引擎数:</td>
+									<td class="header">$len(url_result.get('result',{}))/$allnum</td>
+								</tr>
+								<tr>
+									<td width="100px" class="header">检测时间:</td>
+									<td class="header">$url_result.get('check_time',now)</td>
+								</tr>
+								</tbody>
+							</table>
+						</div> 
+						$if url_result:
+							<div class="check_result r_unknown">
+								<p id="scanzt" align="center" >未知</p>
+								<p id="scanzt" align="center" style="font-size:35px;">$result_count.get('unknown',0)</p>
+							</div> 
+							<div class="check_result r_warning">
+								<p id="scanzt" align="center" >警告</p>
+								<p id="scanzt" align="center" style="font-size:35px;" >$result_count.get('warning',0)</p>
+							</div> 
+							<div class="check_result r_danger">
+								<p id="scanzt" align="center" >危险</p>
+								<p id="scanzt" align="center" style="font-size:35px;">$result_count.get('danger',0)</p>
+							</div> 
+							<div class="check_result r_safe">
+								<p id="scanzt" align="center" >安全</p>
+								<p id="scanzt" align="center" style="font-size:35px;">$result_count.get('safe',0)</p>
+							</div>
+						$if status != 'ing' and recheck == '1':
+							<h3 style="float:right;margin-top: 15px;"><a href="#"  style="margin-right: 0px;" onClick="post();">
+							<b>重新检测</b>
+							</a></h3> 
+					</div>
+				</div>
+			</div>
+			$if not url_result:
+				<div class="feature" id="s3" style="display:none;">
+			$else:
+				<div class="feature" id="s3" >
+				<table id="table" width="100%" cellpadding="0" cellspacing="0" class="tablesorter">
+					<thead>
+						<tr>
+							<th width="40%" class="header">检测引擎</th>
+							<th width="30%" class="header">检测时间</th>
+							<th width="10%" class="header">安全状态</th>
+						</tr>
+					</thead>
+					<tbody>
+					$for engine in Engines.keys(): 
+						<tr>
+							<td width="40%" class="header">$Engines[engine]</td>
+							<td width="30%" class="header">$url_result.get('result',{}).get(engine,{}).get('c_time',now)</td>
+							<td width="10%" class="header check_$url_result.get('result',{}).get(engine,{}).get('c_result','ing')" style='padding-left: 25px; '>$Safe_type[url_result.get('result',{}).get(engine,{}).get('c_result','ing')]</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+		</div>
+	
+		<footer>
+			<div class="inner">
+				<ul>
+					<li><iframe width="120" height="23" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" frameborder="No" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=120&height=24&uid=1740100312&style=2&btn=red&dpc=1"></iframe></li>
+					<li><iframe id="previewmc" src="http://follow.v.t.qq.com/index.php?c=follow&a=quick&name=fooying&style=3&t=1334680723058&f=1" allowtransparency="true" style="margin:0 auto;" frameborder="0" height="23" scrolling="no" width="130"></iframe></li>
+					<li><script src="http://s20.cnzz.com/stat.php?id=3996874&web_id=3996874&show=pic1" language="JavaScript"></script></li>
+				</ul>
+				<p>&copy; 2012 cnsite.so 闽ICP备12005824号-1 </p>
+			</div>
+		</footer>
+	</body>
+</html>
