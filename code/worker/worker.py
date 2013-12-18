@@ -10,11 +10,11 @@ import datetime
 import redis
 from fooying.cnsite import config as a_config
 from fooying.cnsite.public import create_task
-from fooying.kslog import KSLOG
+from fooying.flog import FLOG
 
 Db_rds = redis.Redis(a_config.Redis_ip)
 Queue_rds = redis.Redis(a_config.Queue_redis_ip)
-Log = KSLOG(config.Log_path)
+Log = FLOG(config.Log_path)
 Log_template = '%(messg)s'
 
 def check(url,codeurl,eng,timeout):

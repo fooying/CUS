@@ -9,7 +9,6 @@ https://www.google.com/safebrowsing/diagnostic?site=qq.com
 
 import re
 from fooying.http import http_request
-from fooying.retools import www
 
 def check(site):
 	html = http_request('https://www.google.com/safebrowsing/diagnostic?site=%s'%site)	

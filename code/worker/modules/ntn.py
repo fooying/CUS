@@ -9,7 +9,6 @@ https://safeweb.norton.com/report/show?url=http://www.qq.com/2
 
 import re
 from fooying.http import http_request
-from fooying.retools import www
 
 def check(site):
 	html = http_request('https://safeweb.norton.com/report/show?url=%s'%site)	

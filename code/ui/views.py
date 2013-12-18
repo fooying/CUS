@@ -11,14 +11,14 @@ import redis
 from fooying.cnsite import config
 from fooying.cnsite.public import create_task
 from fooying.retools import www
-from fooying.kslog import KSLOG
+from fooying.flog import FLOG
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 Db_mongo = pymongo.Connection(config.Mongo_ip, config.Mongo_port)
 Db_rds = redis.Redis(config.Redis_ip)
 Queue_rds = redis.Redis(config.Queue_redis_ip)
-Log = KSLOG(config.Log_path)
+Log = FLOG(config.Log_path)
 Log_template = '%(url)s- %(code)-%(messg)s'
 
 render = web.template.render('templates/', cache=False)
@@ -96,6 +96,7 @@ class report:
 
 	def POST(self, codeurl):
 		newtask = web.input().get('newtask','')
+		print web.ctx.ip
 		return self.run(codeurl, newtask)
 
 

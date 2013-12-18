@@ -6,8 +6,8 @@ Mongo_port = 27017
 Redis_ip = '127.0.0.1'
 Queue_redis_ip = '127.0.0.1'
 
-Log_path = '/mnt/log/cnsite/task.log'
-Send_log_path = '/mnt/log/cnsite/send.log'
+Log_path = '/data/log/cnsite/task.log'
+Send_log_path = '/data/log/cnsite/send.log'
 Safe_type = {
 	'safe':'安全',
 	'danger':'危险',

@@ -5,13 +5,12 @@ import redis
 import time
 import pymongo
 from fooying.cnsite import config
-from fooying.retools import www
-from fooying.kslog import KSLOG
+from fooying.flog import FLOG
 
 Db_mongo = pymongo.Connection(config.Mongo_ip, config.Mongo_port)
 Db_rds = redis.Redis(config.Redis_ip)
 Queue_rds = redis.Redis(config.Queue_redis_ip)
-Log = KSLOG(config.Log_path)
+Log = FLOG(config.Log_path)
 Log_template = '%(url)s- %(code)-%(messg)s'
 
 def create_task(codeurl, url, force = False):

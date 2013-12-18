@@ -1,6 +1,6 @@
 #encoding=utf-8
 
-Log_path = '/mnt/log/woker.log'
+Log_path = '/data/log/cnsite/woker.log'
 
 workers = {
 	'fse':{'num':1,'timeout':60},
